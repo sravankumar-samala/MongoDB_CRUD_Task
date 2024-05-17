@@ -10,10 +10,8 @@ dotEnv.config()
 app.use(bodyParser.json())
 
 const port = process.env.PORT || 3004
-const MongoUri = process.env.MONGO_URI
-console.log(typeof MongoUri)
 
-mongoose.connect(MongoUri, { dbName: 'sample_task_db' })
+mongoose.connect(process.env.MONGO_URI, { dbName: 'sample_task_db' })
     .then(() => console.log('Connected successfully'))
     .catch((error) => console.log('error', error))
 
