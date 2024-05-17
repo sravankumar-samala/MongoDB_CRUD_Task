@@ -9,7 +9,7 @@ const app = express()
 dotEnv.config()
 app.use(bodyParser.json())
 
-const port = process.env.PORT
+const port = process.env.PORT || 3004
 const MongoUri = process.env.MONGO_URI
 
 
